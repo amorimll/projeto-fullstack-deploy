@@ -1,47 +1,30 @@
 import './styles.css';
-import { postUser} from '../../api/api';
-import React, { useState } from "react";
+import React from "react";
+import FormRegister from '../../components/FormRegistrar/FormRegistrar';
+import { useNavigate } from "react-router-dom"
 
-function App() {
-
-  const [values, setValues] = useState();
-
-  const handleAddValues = (value) => {
-    setValues((prevValues) => ({
-      ...prevValues,
-      [value.target.name]: value.target.value,
-    }));
-  };
-
-  const handleClickButton = () => {
-    postUser({
-      nome: values.nome,
-      senha: values.senha,
-      email: values.email
-    })
-  }
+const Register = () => {
+  const navigate = useNavigate()
 
   return (
-    <div className="body">
-      <div className="app">
-        <form className="app-form" >
-          <label>
-            Nome:
-            <input type="text" name="nome" onChange={handleAddValues} />
-          </label>
-          <label>
-            Senha:
-            <input type="text" name="senha" onChange={handleAddValues} />
-          </label>
-          <label>
-            Email:
-            <input type="text" name="email" onChange={handleAddValues} />
-          </label>
-          <button className="button" onClick={() => handleClickButton()} >Register</button>
-        </form>
+    <div className="body-register">
+      <div className="body-register-content">
+        <div className='body-register-content-form'>
+          <h1 className='body-register-content-form-titulo'>Criar conta</h1>
+          <FormRegister />
+          <div className='body-register-content-form-login'>
+            <p className='body-register-content-form-login-text'>Já tem uma conta?</p>
+            <button className='body-register-content-form-login-button' onClick={() => navigate("/login")}>
+              <p className='body-register-content-form-login-button-text'><strong>Entre aqui</strong></p>
+            </button>
+          </div>
+        </div>
+        <div className='body-register-content-image'>
+          <h1>Segunda div</h1>
+        </div>
       </div>
     </div>
   );
 }
 
-export default App;
+export default Register;

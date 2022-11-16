@@ -1,26 +1,67 @@
-.body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+.body-register {
     height: 100vh;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.app {
-    background-color: aqua;
-    width: 50%;
-    height: 50%;   
+.body-register-content {
+    width: 55%;
+    height: 65%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    border-radius: 20px 20px 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 }
 
-.app-form {
+.body-register-content-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 50%;
 }
 
-.button {
-    width: 215px;
-    height: 30px;
+.body-register-content-form-titulo {
+    font-family: 'Poppins';
+    font-weight: 400;
 }
+
+.body-register-content-form-login {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 18px;
+    width: 52%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.body-register-content-form-login-button {
+    font-family: 'Poppins';
+    font-weight: 400;
+    border-style: none;
+    background: none;
+}
+
+.body-register-content-form-login-button-text {
+    font-family: 'Poppins';
+    font-size: 18px;
+    border-style: none;
+    background: none;
+    transition: 0.1s;
+}
+
+.body-register-content-form-login-button-text:hover {
+    color: rgb(114, 114, 114);
+}
+
+.body-register-content-image {
+    background-color: rgb(31, 73, 122);
+    width: 50%;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+}
+

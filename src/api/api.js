@@ -22,6 +22,12 @@ export const getAllPosts = async () => {
     return data
 }
 
+export const getUsername = async () => {
+    const res = await axios.get("http://localhost:3001/username")
+    const data = res.data
+    return data
+}
+
 export const loginUser = (dados) => axios.post("http://localhost:3001/login", dados).then(res => {
     const data = res.data
     console.log(data)

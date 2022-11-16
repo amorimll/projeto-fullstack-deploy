@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+.body-formRegister-form {
+    display: flex;
+    flex-direction: column;
+    width: 35vh;
+    margin: 45px;
+}
+
+.body-formRegister-form-input {
+    height: 30px;
+    padding-top: px;
+    margin-bottom: 10px;
+    border-style: none;
+    border-bottom: 1px solid;
+    outline: none;
+    border-color: rgb(160, 160, 160);
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.body-formRegister-form-label {
+    font-family: 'Poppins';
+    font-weight: 100;
+}
+
+.body-formRegister-form-button {
+    font-family: 'Poppins';
+    font-weight: 400;
+    border-radius: 5px;
+    height: 50px;
+    border-style: none;
+    background-color: #000000;
+    color: white;
+    transition: 0.3s;
+}
+
+.body-formRegister-form-button:hover {
+    background-color: rgb(114, 114, 114);
+}

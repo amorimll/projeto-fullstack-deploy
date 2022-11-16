@@ -1,0 +1,9 @@
+.body-homeFeed {
+    width: 640px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

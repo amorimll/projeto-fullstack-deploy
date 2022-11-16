@@ -35,7 +35,7 @@ const AuthProvider = ({ children }) => {
     }
 
     if (loading) {
-        return <h1>Loading...</h1>
+        return (<></>)
     }
     return (
         <Context.Provider value={{ authenticated, handleLogin, handleLogout }}>
