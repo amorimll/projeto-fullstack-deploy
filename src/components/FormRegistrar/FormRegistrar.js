@@ -25,7 +25,7 @@ const FormRegister = () => {
       email: values.email
     })
 
-    localStorage.setItem('loginStatus', data.status)
+    localStorage.setItem('registroStatus', data.status)
     // eslint-disable-next-line
     if (data.status == 23000) {
       navigate(0)
