@@ -58,10 +58,17 @@
     color: rgb(114, 114, 114);
 }
 
-.body-login-content-image {
+.body-login-content-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(31, 73, 122);
     width: 50%;
     height: 100%;
     border-radius: 0px 20px 20px 0px;
+    overflow: hidden;
 }
 
+.body-login-content-div-image {
+    width: 190%;
+}

@@ -28,7 +28,7 @@ const Posts = () => {
 
 	return (
 		<>
-			{data.posts.map((element, key) => {
+			{data.posts.map((element) => {
 				if (element.userid === data.id_usuario_logado) {
 					return (
 						<div className='post-div' key={element.id}>

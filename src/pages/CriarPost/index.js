@@ -1,12 +1,12 @@
 import React from 'react'
 import './styles.css'
-import FormPost from '../../components/FormCriar/FormCriar'
+import FormCriar from '../../components/FormCriar/FormCriar'
 
 const CriarPost = () => {
 
     return (
         <div>
-            <FormPost />
+            <FormCriar />
         </div>
     )
 }
