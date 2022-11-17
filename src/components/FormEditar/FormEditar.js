@@ -27,8 +27,8 @@ const EditarPost = () => {
     return (
         <form className='body-formCriar'>
             <h3 className='body-formCriar-titulo'>Edite sua publicação</h3>
-            <input className='body-formCriar-tituloTexto' maxLength={50} type="text" name="titulo" placeholder='Título' onChange={handleAddValues} />
-            <textarea className='body-formCriar-texto' maxLength={400} type="text" name="texto" placeholder='Texto' onChange={handleAddValues} />
+            <input className='body-formCriar-tituloTexto' maxLength={50} defaultValue={titulo} type="text" name="titulo" placeholder='Título' onChange={handleAddValues} />
+            <textarea className='body-formCriar-texto' maxLength={400} defaultValue={texto} type="text" name="texto" placeholder='Texto' onChange={handleAddValues} />
             <button className='body-formCriar-button' type="button" onClick={() => handleSubmit()}>Editar</button>
         </form>
     );

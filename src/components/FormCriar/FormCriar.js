@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './styles.css'
 import { createPost } from '../../api/api'
+import { useNavigate } from "react-router-dom"
 
 const FormPost = () => {
-
     const [values, setValues] = useState();
+
+    const navigate = useNavigate()
 
     const handleAddValues = (value) => {
         setValues((prevValues) => ({
@@ -17,6 +19,8 @@ const FormPost = () => {
         createPost({
             titulo: values.titulo,
             texto: values.texto,
+        }).then(() => {
+            navigate("/home")
         })
     }
 
