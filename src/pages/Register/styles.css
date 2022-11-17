@@ -24,6 +24,11 @@
     width: 50%;
 }
 
+.body-register-content-erro {
+    color: brown;
+    font-family: 'Poppins';
+}
+
 .body-register-content-form-titulo {
     font-family: 'Poppins';
     font-weight: 400;

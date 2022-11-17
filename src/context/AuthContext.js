@@ -7,9 +7,9 @@ const Context = createContext()
 const AuthProvider = ({ children }) => {
     const [authenticated, setAuthenticated] = useState(false)
     const [loading, setLoading] = useState(true)
-    const token = localStorage.getItem('token')
 
     useEffect(() => {
+        const token = localStorage.getItem('token')
         // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjY4NjIwNjU4LCJleHAiOjE2Njg3MDcwNTh9.XGTNDS4FBtp5uDwnb073r2m9WWrZpQIWRP1QEs4wGls
         if (token) {
             axios.defaults.headers.common["Authorization"] = `Bearer ${JSON.parse(token)}`

@@ -1,13 +1,17 @@
 import './styles.css'
 import React from 'react'
 import FormEditar from '../../components/FormEditar/FormEditar'
+import Header from '../../components/Header/Header'
 
 const EditarPost = () => {
 
     return (
-        <div>
-            <FormEditar />
-        </div>
+        <>
+            <Header />
+            <div className='body-editarPost'>
+                <FormEditar />
+            </div>
+        </>
     )
 }
 

@@ -5,12 +5,10 @@ import { useNavigate } from "react-router-dom"
 import { loginUser } from '../../api/api';
 
 const Form = () => {
-    const { authenticated, handleLogin } = useContext(Context)
+    const { handleLogin } = useContext(Context)
     const [values, setValues] = useState();
 
     const navigate = useNavigate()
-
-    console.log(authenticated)
 
     localStorage.removeItem('loginStatus')
 
@@ -21,24 +19,22 @@ const Form = () => {
         }));
     };
 
-    const handleTeste = async () => {
+    const handleLoginENavigate = async () => {
         const data = await loginUser({
             email: values.email,
             senha: values.senha
         })
 
         localStorage.setItem('loginStatus', data.status)
+        // eslint-disable-next-line
         if (data.status == 23000) {
             navigate(0)
+            // eslint-disable-next-line
         } else if (data.status == 200) {
             handleLogin(values.email, values.senha).then(() => {
                 navigate("/home")
             })
         }
-    }
-
-    const handleLoginAndNavigate = async () => {
-        const data = await handleLogin(values.email, values.senha)
     }
 
     return (
@@ -56,7 +52,7 @@ const Form = () => {
                     </label>
                     <input className="body-formLogin-form-fields-input" type="password" name="senha" onChange={handleAddValues} />
                 </div>
-                <button type="button" className="body-formLogin-form-button" onClick={() => handleTeste()}>Entrar</button>
+                <button type="button" className="body-formLogin-form-button" onClick={() => handleLoginENavigate()}>Entrar</button>
             </form>
         </div>
     );

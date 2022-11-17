@@ -1,13 +1,18 @@
 import React from 'react'
 import './styles.css'
 import FormCriar from '../../components/FormCriar/FormCriar'
+import Header from '../../components/Header/Header'
 
 const CriarPost = () => {
 
     return (
-        <div>
-            <FormCriar />
-        </div>
+        <>
+            <Header />
+            <div className='body-criarPost'>
+                <FormCriar />
+            </div>
+        </>
+
     )
 }
 

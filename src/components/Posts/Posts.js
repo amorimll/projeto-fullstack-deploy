@@ -1,7 +1,9 @@
 import './styles.css'
+import Icon from '@mdi/react'
 import React, { useEffect, useState } from 'react'
 import { getAllPosts, deletePost } from '../../api/api'
 import { useNavigate } from "react-router-dom"
+import { mdiPencil, mdiDelete } from '@mdi/js';
 
 const Posts = () => {
 	const navigate = useNavigate()
@@ -11,13 +13,9 @@ const Posts = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			try {
-				const res = await getAllPosts()
-				setData(res)
-				setLoading(false)
-			} catch (err) {
-				console.log(err)
-			}
+			const res = await getAllPosts()
+			setData(res)
+			setLoading(false)
 		}
 		fetchData()
 	}, [])
@@ -35,19 +33,19 @@ const Posts = () => {
 							<div className='post-div-header'>
 								<div className='post-div-header-sub'>
 									<p className='post-div-header-sub-username'>{element.username}</p>
-									<div>
-										<button className='button' onClick={() => {
+									<div className='post-div-header-sub-buttons'>
+										<button className='post-div-header-sub-buttons-button' onClick={() => {
 											localStorage.setItem('titulo', JSON.stringify(element.titulo));
 											localStorage.setItem('texto', JSON.stringify(element.texto));
 											localStorage.setItem('id', JSON.stringify(element.id));
 											navigate("/home/editar");
-										}}>Editar</button>
-										<button type="submit" className='button' onClick={() => {
+										}}><Icon className='post-div-header-sub-buttons-button-icon' path={mdiPencil}></Icon></button>
+										<button type="button" className='post-div-header-sub-buttons-button' onClick={() => {
 											deletePost({
 												id: element.id
 											});
 											navigate(0);
-										}}>Deletar</button>
+										}}><Icon className='post-div-header-sub-buttons-button-icon' path={mdiDelete}></Icon></button>
 									</div>
 								</div>
 

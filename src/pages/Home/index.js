@@ -12,7 +12,7 @@ const Home = () => {
       <Header />
       <div className='body-home-div'>
         <form className='body-home-div-form'>
-          <input className={`body-home-div-form-input`} type="text" placeholder='Criar post' onClick={() => { navigate("/home/postar") }} />
+          <input className='body-home-div-form-input' type="text" placeholder='Criar post' onClick={() => { navigate("/home/postar") }} />
         </form>
         <HomeFeed />
       </div>

@@ -1,22 +1,16 @@
 import axios from 'axios'
 
-export const postUser = (dados) => axios.post("http://localhost:3001/posts", dados).then(res => {
+export const createPost = (dados) => axios.post("http://localhost:3001/homeFeed", dados)
+
+export const deletePost = (dados) => axios.delete("http://localhost:3001/homeFeed", {data: dados})
+
+export const updatePost = (dados) => axios.patch("http://localhost:3001/homeFeed", dados)
+
+export const postUser = async (dados) => {
+    const res = await axios.post("http://localhost:3001/posts", dados)
     const data = res.data
     return data
-})
-
-export const createPost = (dados) => axios.post("http://localhost:3001/homeFeed", dados).then(res => {
-    console.log(res)
-    console.log('Dados Inseridos.')
-})
-
-export const deletePost = (dados) => axios.delete("http://localhost:3001/homeFeed", {data: dados}).then(res => {
-    console.log('Post deletado')
-})
-
-export const updatePost = (dados) => axios.patch("http://localhost:3001/homeFeed", dados).then(res => {
-    console.log('Post editado')
-})
+}
 
 export const getAllPosts = async () => {
     const res = await axios.get("http://localhost:3001/homeFeed")
@@ -30,7 +24,8 @@ export const getUsername = async () => {
     return data
 }
 
-export const loginUser = (dados) => axios.post("http://localhost:3001/login", dados).then(res => {
+export const loginUser = async (dados) => {
+    const res = await axios.post("http://localhost:3001/login", dados)
     const data = res.data
     return data
-})
+}

@@ -13,13 +13,10 @@ const Header = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            try {
-                const res = await getUsername()
-                setData(res)
-                setLoading(false)
-            } catch (err) {
-                console.log(err)
-            }
+            const res = await getUsername()
+            setData(res)
+            setLoading(false)
+
         }
         fetchData()
     }, [])

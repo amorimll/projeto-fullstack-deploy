@@ -24,6 +24,11 @@
     width: 50%;
 }
 
+.body-login-content-erro {
+    color: brown;
+    font-family: 'Poppins';
+}
+
 .body-login-content-form-titulo {
     font-family: 'Poppins';
     font-weight: 400;
@@ -70,5 +75,6 @@
 }
 
 .body-login-content-div-image {
-    width: 190%;
+    width: 185%;
+    height: 100%;
 }

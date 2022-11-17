@@ -25,8 +25,14 @@ const FormRegister = () => {
       email: values.email
     })
 
-    navigate(0)
-    localStorage.setItem('registroStatus', data.status)
+    localStorage.setItem('loginStatus', data.status)
+    // eslint-disable-next-line
+    if (data.status == 23000) {
+      navigate(0)
+      // eslint-disable-next-line
+    } else if (data.status == 200) {
+      navigate("/login")
+    }
   }
 
   return (
@@ -48,7 +54,7 @@ const FormRegister = () => {
           </label>
           <input className="body-formRegister-form-fields-input" type="password" name="senha" onChange={handleAddValues} />
         </div>
-        <button type="button" className="body-formRegister-form-button" onClick={() => handleRegister()}>Entrar</button>
+        <button type="button" className="body-formRegister-form-button" onClick={() => handleRegister()}>Cadastrar</button>
       </form>
     </div>
   );
